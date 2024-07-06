@@ -76,6 +76,10 @@ body {
   opacity: 0.8;
 }
 
+.flow > * + * {
+  margin-top: 1rem;
+}
+
 /* Header */
 
 header {
@@ -87,6 +91,38 @@ header {
 main {
   padding: 1rem;
   background-color: rgba(5, 5, 5, 0.1);
+}
+
+.book-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 275px);
+  grid-gap: 2rem;
+  justify-items: center;
+}
+
+.book-card {
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-btn {
+  display: inline-block;
+  width: 100%;
+}
+
+.del-btn {
+  background-color: rgb(255, 165, 159);
 }
 
 /* Footer */
