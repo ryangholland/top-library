@@ -96,9 +96,9 @@ main {
 .book-grid {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 275px);
+  grid-template-columns: repeat(auto-fit, 285px);
   grid-gap: 2rem;
-  justify-items: center;
+  justify-content: center;
 }
 
 .book-card {
