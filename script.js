@@ -4,20 +4,23 @@ const dialog = document.querySelector("dialog");
 const closeDialogBtn = document.querySelector(".can-btn");
 const submitBtn = document.querySelector(".sub-btn");
 
-const myLibrary = [
+let myLibrary = [
   {
+    id: "1",
     title: "Test Title",
     author: "Test Author",
     pages: 100,
     read: false,
   },
   {
+    id: "2",
     title: "Test Title 2",
     author: "Test Author 2",
     pages: 200,
     read: false,
   },
   {
+    id: "3",
     title: "Test Title 3",
     author: "Test Author 3",
     pages: 300,
@@ -25,7 +28,14 @@ const myLibrary = [
   },
 ];
 
+function generateRandomID() {
+  const randomPart = Math.random().toString(36).substring(2, 15);
+  const timestampPart = Date.now().toString(36);
+  return randomPart + timestampPart;
+}
+
 function Book(title, author, pages, read) {
+  this.id = generateRandomID();
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -34,6 +44,11 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
+}
+
+function removeBookFromLibrary(id) {
+  myLibrary = myLibrary.filter((book) => book.id != id);
+  displayBooks(myLibrary);
 }
 
 function displayBooks(myLibrary) {
@@ -78,6 +93,12 @@ function displayBook(book) {
   deleteBtn.classList.add("long-btn");
   deleteBtn.classList.add("del-btn");
   deleteBtn.textContent = "Delete";
+  deleteBtn.dataset.id = book.id;
+
+  deleteBtn.addEventListener("click", (e) => {
+    console.log(e.target);
+    removeBookFromLibrary(e.target.dataset.id);
+  });
 
   bookDetails.append(bookTitle, bookAuthor, bookPages);
   bookButtons.append(readBtn, deleteBtn);
