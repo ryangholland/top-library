@@ -1,3 +1,6 @@
+const addBookBtn = document.querySelector("#add-btn");
+const dialog = document.querySelector("dialog");
+
 const myLibrary = [
   {
     title: "Test Title",
@@ -18,6 +21,10 @@ const myLibrary = [
     read: false,
   },
 ];
+
+addBookBtn.addEventListener("click", () => {
+  dialog.showModal();
+})
 
 function Book(title, author, pages, read) {
   this.title = title;

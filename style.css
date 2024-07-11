@@ -131,3 +131,30 @@ footer {
   text-align: center;
   padding: 0.5rem;
 }
+
+/* Dialog */
+
+dialog {
+  margin-top: 7.5rem;
+  margin-inline: auto;
+
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+
+  padding: 2rem;
+  background-color: white;
+
+  text-align: center;
+}
+
+dialog::backdrop {
+  background-color: gray;
+  opacity: 0.4;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+}
