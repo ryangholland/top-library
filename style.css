@@ -105,6 +105,10 @@ input {
   justify-content: flex-end;
 }
 
+.green-bg {
+  background-color: rgb(173, 233, 190);
+}
+
 /* Header */
 
 header {

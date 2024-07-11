@@ -86,7 +86,18 @@ function displayBook(book) {
   const readBtn = document.createElement("button");
   readBtn.classList.add("btn");
   readBtn.classList.add("long-btn");
-  readBtn.textContent = "Not Read";
+  readBtn.textContent = book.read ? "Read" : "Not Read";
+  if (book.read) readBtn.classList.add("green-bg");
+
+  readBtn.addEventListener("click", (e) => {
+    book.read = !book.read;
+    readBtn.textContent = book.read ? "Read" : "Not Read";
+    if (book.read) {
+      readBtn.classList.add("green-bg");
+    } else {
+      readBtn.classList.remove("green-bg")
+    }
+  });
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn");
@@ -96,7 +107,6 @@ function displayBook(book) {
   deleteBtn.dataset.id = book.id;
 
   deleteBtn.addEventListener("click", (e) => {
-    console.log(e.target);
     removeBookFromLibrary(e.target.dataset.id);
   });
 
