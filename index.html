@@ -39,19 +39,21 @@
       <p>&copy; 2024 Ryan Holland</p>
     </footer>
 
-    <dialog >
-      <button>Cancel</button>
-      <h1>Add New Book</h1>
-      <form action="">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" required>
-        <label for="author">Author</label>
-        <input type="text" id="author" name="author" required>
-        <label for="pages">Pages</label>
-        <input type="number" id="pages" name="pages" required>
-        <label for="read">Read</label>
-        <input type="checkbox" name="read" id="read">
-        <button type="submit">Submit</button>
+    <dialog class="flow">
+      <div class="row end">
+        <button class="can-btn">X</button>
+      </div>
+   
+      <h2>Add New Book</h2>
+      <form action="" class="flow">
+        <input type="text" id="title" name="title" placeholder="Title" required>
+        <input type="text" id="author" name="author" placeholder="Author" required>
+        <input type="number" id="pages" name="pages" placeholder="Pages" required>
+        <div class="row center">
+          <label for="read">Have you read it?</label>
+          <input class="checkbox" type="checkbox" name="read" id="read">
+        </div>
+        <button class="btn book-btn sub-btn" type="submit">Submit</button>
         
       </form>
     </dialog>
