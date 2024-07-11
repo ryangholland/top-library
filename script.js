@@ -1,5 +1,8 @@
 const addBookBtn = document.querySelector("#add-btn");
+
 const dialog = document.querySelector("dialog");
+const closeDialogBtn = document.querySelector(".can-btn");
+const submitBtn = document.querySelector(".sub-btn");
 
 const myLibrary = [
   {
@@ -22,10 +25,6 @@ const myLibrary = [
   },
 ];
 
-addBookBtn.addEventListener("click", () => {
-  dialog.showModal();
-})
-
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -33,8 +32,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary() {
-  const newBook = new Book(title, author, pages, read);
+function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
 }
 
@@ -87,5 +85,35 @@ function displayBook(book) {
 
   bookGrid.appendChild(bookCard);
 }
+
+addBookBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeDialogBtn.addEventListener("click", () => {
+  dialog.close();
+});
+
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const titleInput = document.querySelector("#title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
+  const readInput = document.querySelector("#read");
+
+  if (!titleInput.value || !authorInput.value || !pagesInput.value) return;
+
+  const newBook = new Book(
+    titleInput.value,
+    authorInput.value,
+    pagesInput.value,
+    readInput.checked
+  );
+
+  addBookToLibrary(newBook);
+  displayBooks(myLibrary);
+  dialog.close();
+});
 
 displayBooks(myLibrary);
