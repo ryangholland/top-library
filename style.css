@@ -51,6 +51,9 @@ h6 {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.body-grid {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -78,6 +81,11 @@ input {
 .btn:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.long-btn {
+  display: inline-block;
+  width: 100%;
 }
 
 .flow > * + * {
@@ -133,11 +141,6 @@ main {
   justify-content: space-between;
 }
 
-.book-btn {
-  display: inline-block;
-  width: 100%;
-}
-
 .del-btn {
   background-color: rgb(255, 165, 159);
 }
@@ -152,14 +155,12 @@ footer {
 /* Dialog */
 
 dialog {
-  margin-top: 7.5rem;
-  margin-inline: auto;
+  margin: auto;
 
   border: solid 1px gray;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  min-height: 300px;
-
+  
   padding: 1rem 2rem;
   background-color: white;
 
@@ -168,7 +169,7 @@ dialog {
 
 dialog::backdrop {
   background-color: gray;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 dialog form {
@@ -193,7 +194,7 @@ dialog form {
 
 .checkbox {
   width: 20px;
-  height: 20px;  
+  height: 20px;
   margin-top: 2.5px;
   accent-color: black;
 }

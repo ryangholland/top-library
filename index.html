@@ -9,52 +9,71 @@
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <h1>Library</h1>
-      </div>
-    </header>
-    <main>
-      <div class="container">
-        <button class="btn" id="add-btn">&plus; Add Book</button>
-        <div class="book-grid">
-          <div class="book-card">
-            <div class="book-details flow">
-              <h2>Book Title</h2>
-              <p>by Author</p>
-              <p>XXX pages</p>
-            </div>
-            <div class="book-btns flow">
-              <button class="btn book-btn">Not Read</button>
-              <button class="btn book-btn del-btn">Delete</button>
-            </div>
-          </div>
-          <div class="book-card">hello</div>
-          <div class="book-card">hello</div>
-          <div class="book-card">hello</div>
+    <div class="body-grid">
+      <header>
+        <div class="container">
+          <h1>Library</h1>
         </div>
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2024 Ryan Holland</p>
-    </footer>
+      </header>
+      <main>
+        <div class="container">
+          <button class="btn" id="add-btn">&plus; Add Book</button>
+          <div class="book-grid">
+            <div class="book-card">
+              <div class="book-details flow">
+                <h2>Book Title</h2>
+                <p>by Author</p>
+                <p>XXX pages</p>
+              </div>
+              <div class="book-btns flow">
+                <button class="btn long-btn">Not Read</button>
+                <button class="btn long-btn del-btn">Delete</button>
+              </div>
+            </div>
+            <div class="book-card">hello</div>
+            <div class="book-card">hello</div>
+            <div class="book-card">hello</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; 2024 Ryan Holland</p>
+      </footer>
+    </div>
 
     <dialog class="flow">
       <div class="row end">
         <button class="can-btn">X</button>
       </div>
-   
+
       <h2>Add New Book</h2>
       <form action="" class="flow">
-        <input type="text" id="title" name="title" placeholder="Title" required>
-        <input type="text" id="author" name="author" placeholder="Author" required>
-        <input type="number" id="pages" name="pages" placeholder="Pages" required>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Title"
+          required
+        />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Author"
+          required
+        />
+        <input
+          type="number"
+          id="pages"
+          name="pages"
+          placeholder="Pages"
+          required
+        />
         <div class="row center">
           <label for="read">Have you read it?</label>
-          <input class="checkbox" type="checkbox" name="read" id="read">
+          <input class="checkbox" type="checkbox" name="read" id="read" />
         </div>
-        <button class="btn book-btn sub-btn" type="submit">Submit</button>
-        
+        <button class="btn long-btn sub-btn" type="submit">Submit</button>
       </form>
     </dialog>
   </body>

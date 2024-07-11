@@ -72,12 +72,12 @@ function displayBook(book) {
 
   const readBtn = document.createElement("button");
   readBtn.classList.add("btn");
-  readBtn.classList.add("book-btn");
+  readBtn.classList.add("long-btn");
   readBtn.textContent = "Not Read";
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn");
-  deleteBtn.classList.add("book-btn");
+  deleteBtn.classList.add("long-btn");
   deleteBtn.classList.add("del-btn");
   deleteBtn.textContent = "Delete";
 
